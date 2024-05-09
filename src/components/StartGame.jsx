@@ -1,18 +1,18 @@
 import React from 'react'
 import style from 'styled-components'
 
-const StartGame = () => {
+const StartGame = ({handleNavigate}) => {
   return (
     <>
       <Container>
 
-        <div>
-            <img src='./public/dice_3.png'/>
+        <div className='image'>
+            <img src='src\Images\dices.png' alt='DicePic'/>
         </div>
 
         <div className='content'>
             <h1>Dice Game</h1>
-            <Button>Play Now</Button>
+            <Button onClick={handleNavigate}>Play Now</Button>
         </div>
 
       </Container>
@@ -34,18 +34,18 @@ const Container = style.div`
         align-items: end;
         flex-direction: column;
         h1 {
-            font-size: 96px;
+            font-size: 93px;
             margin: 0;
             white-space: nowrap;
         }
     }
-`
 
-// const Content = style.h1`
-//     font-size: 46px;
-//     white-space: nowrap;
-//     `
-    
+    .image{
+      img{
+        width: 480px;
+      }
+    }
+`    
     const Button = style.button`
     color: white;
     padding: 10px 18px;
@@ -54,4 +54,5 @@ const Container = style.div`
     min-width: 220px;
     font-size: 16px;
     border: none;
+    cursor: pointer;
 `
