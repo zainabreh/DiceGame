@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "styled-components";
 
-const Numbers = () => {
-    const [SelectedNumber,setSelectedNumber] = useState();
+const Numbers = ({SelectedNumber,setSelectedNumber,error}) => {
   const num = [1, 2, 3, 4, 5, 6];
-
-  console.log(SelectedNumber);
-
   return (
     <Container>
+      <div style={{color:"red", fontWeight:"bolder"}}>{error}</div>
         <Boxes>
         {num.map((n,i) => (
         <Box key={i} onClick={()=>setSelectedNumber(n)} selected = {n === SelectedNumber}>

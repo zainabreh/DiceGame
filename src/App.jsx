@@ -4,7 +4,7 @@ import PalyGame from './components/PalyGame';
 import './App.css'
 
 const App = () => {
-  const [NavigateGame,setNavigateGame] = useState(true);
+  const [NavigateGame,setNavigateGame] = useState(false);
 
   const handleNavigate = () => {
     setNavigateGame((prev)=>!prev)
@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <>
-    {NavigateGame ? <PalyGame/> : <StartGame handleNavigate={handleNavigate}/>}
+    {NavigateGame ? <PalyGame handleNavigate={handleNavigate}/> : <StartGame handleNavigate={handleNavigate}/>}
     </>
   )
 }
